@@ -61,25 +61,29 @@ Page({
       ]
     });
 
-    var that = this;
-    var res_points = [{
-      latitude: null,
-      longitude: null
-    }];
     _storage.getSitesAsync(function (sites) {
       for (var i = 0; i < sites.length; i++) {
-        res_points[i] = {
-          latitude: sites[i].lat,
-          longitude: sites[i].lng
-        }
+        let lat = sites[i].lat;
+        let lng = sites[i].lng;
+        var index = "markers[" + (i + 1) + "]";
+        that.setData({
+          [index]:{
+            latitude: lat,
+            longitude: lng,
+            iconPath: '../../images/site.png',
+            width: 50,
+            height: 50,
+            callout: {
+              content: "驻留结果",
+              fontSize: 13,
+              borderRadius: 5,
+              padding: 6,
+              display: 'BYCLICK',
+            }
+          }
+        });
+
       }
-      that.setData({
-        polyline: [{
-          points: res_points,
-          color: "#ff0000",
-          width: 4
-        }]
-      });
     });
   },
 
