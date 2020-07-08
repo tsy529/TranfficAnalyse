@@ -1,0 +1,13 @@
+<!--miniprogram/pages/home/home.wxml-->
+<map style="width:100%;height:300px"
+  latitude="{{markers[0].latitude}}" 
+  longitude="{{markers[0].longitude}}"
+  markers="{{markers}}"
+  polyline="{{polyline}}"
+  ></map>
+<button bindtap="showLine" hidden="false">显示路径</button>
+<picker class="view_picker">
+  <picker-view>驻留分析</picker-view>
+</picker>
+<button class="button" type="primary">切换视图</button>
+<button class="button" type="primary">查看详情</button>
