@@ -6,8 +6,8 @@
   polyline="{{polyline}}"
   ></map>
 <button bindtap="showLine" hidden="false">显示路径</button>
-<picker class="view_picker">
-  <picker-view>驻留分析</picker-view>
+<picker class="view_picker" bindchange="bindPickerChange" value="{{viewIndex}}" range="{{views}}">
+  <view>当前选择：{{views[viewIndex]}}</view>
 </picker>
 <button class="button" type="primary">切换视图</button>
 <button class="button" type="primary">查看详情</button>

@@ -9,7 +9,16 @@ Page({
    */
   data: {
     markers: [],
-    polyline: []
+    polyline: [],
+    views: ["驻留分析", "出行方式", "出行目的", "人流密度"],
+    viewIndex: 0
+  },
+
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      viewIndex: e.detail.value
+    })  
   },
 
   showLine: function(res) {
@@ -82,7 +91,6 @@ Page({
             }
           }
         });
-
       }
     });
   },
