@@ -1,0 +1,13 @@
+<!--miniprogram/pages/recommend/recommend.wxml-->
+<view wx:for="{{items}}" wx:for-index="listIndex" data-listIndex="{{listIndex}}">
+  <view class="container">
+    <image class="left" src="{{items[listIndex].image}}"></image>
+    <view class="right">
+      <view class="name">{{items[listIndex].name}}</view>
+      <view class="type">{{items[listIndex].type}}</view>
+      <view class="address">{{items[listIndex].address}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="status">{{status}}</view>

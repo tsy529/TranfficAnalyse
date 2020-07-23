@@ -1,0 +1,16 @@
+<!--miniprogram/pages/currentDetail/currentDetail.wxml-->
+<view class="containers">
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_count }}" 
+    force-use-old-canvas="true"
+    bind:init="echartInit_count"></ec-canvas>
+</view>
+<view class="footer">
+    <picker class = "picker" bindchange="bindBlockChange" value="{{blockIndex}}" range="{{blocks}}">
+	    <view>选择区域：{{blocks[blockIndex]}}</view>
+    </picker>
+    <picker class = "picker" bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+	    <view>选择类型：{{types[typeIndex]}}</view>
+    </picker>
+    <button class="button" type="primary" bindtap="bindRecommendTap">查看推荐</button>
+</view>
+

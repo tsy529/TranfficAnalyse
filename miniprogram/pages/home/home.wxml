@@ -1,13 +1,17 @@
 <!--miniprogram/pages/home/home.wxml-->
-<map style="width:100%;height:300px"
-  latitude="{{markers[0].latitude}}" 
-  longitude="{{markers[0].longitude}}"
-  markers="{{markers}}"
-  polyline="{{polyline}}"
-  ></map>
-<button bindtap="showLine" hidden="false">显示路径</button>
-<picker class="view_picker" bindchange="bindPickerChange" value="{{viewIndex}}" range="{{views}}">
-  <view>当前选择：{{views[viewIndex]}}</view>
-</picker>
-<button class="button" type="primary">切换视图</button>
-<button class="button" type="primary">查看详情</button>
+<map style="width:100%;height:100vh" latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}" markers="{{markers}}" polyline="{{polyline}}">
+	<cover-view class='footer'>
+		<cover-view animation="{{toolAnimation}}" class='tools'>
+      <button type="primary" style="background-color:#87CEFA"
+        bindtap="bindMoreTap"></button>
+			<input class="input" bindinput="bindImsiInput" placeholder="输入imsi" />
+			<picker class="view_picker" bindchange="bindPickerChange" value="{{viewIndex}}" range="{{views}}">
+				<view>选择模块：{{views[viewIndex]}}</view>
+			</picker>
+			<button class="button" type="primary" bindtap="bindSearchTap">确认查询</button>
+			<button class="button" type="primary" bindtap="bindShowLine" hidden="{{hideLine}}">显示路径</button>
+			<button class="button" type="primary" bindtap="bindHideLine" hidden="{{showLine}}">隐藏路径</button>
+			<button class="button" type="primary" bindtap="bindDetailTap">查看统计</button>
+		</cover-view>
+	</cover-view>
+</map>

@@ -1,0 +1,10 @@
+<!--miniprogram/pages/gooutDetail/gooutDetail.wxml-->
+<view class="containers">
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_time }}" 
+    force-use-old-canvas="true"
+    bind:init="echartInit_time"></ec-canvas>
+
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_prop }}" 
+    force-use-old-canvas="true"
+    bind:init="echartInit_prop"></ec-canvas>
+</view>

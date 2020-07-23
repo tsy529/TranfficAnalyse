@@ -1,0 +1,38 @@
+/* miniprogram/pages/currentDetail/currentDetail.wxss */
+.containers{
+  height: 600rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0px;
+}
+
+.picker {
+  display: flex;
+  justify-content: center;
+  margin: 12px 68px 12px 68px;
+  padding: 6px;
+  border-radius: 5px;
+  min-height: 1rem;
+}
+
+.button {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
